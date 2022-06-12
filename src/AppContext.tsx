@@ -25,11 +25,9 @@ const AppContextProvider: FC = ({children}) => {
   }, []);
 
   useEffect(() => {
-    (() => {
-      ApiService.getMovies()
-        .then(val => setMovies(val))
-        .catch(err => setError(err));
-    })();
+    ApiService.getMovies()
+      .then(val => setMovies(val))
+      .catch(err => setError(err));
   }, [imageBaseUrl]);
 
   const handleLikeMovies = (movie: IMovie) => {
